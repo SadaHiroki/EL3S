@@ -25,7 +25,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
   const hours = String(now.getHours()).padStart(2, "0");
   const minutes = String(now.getMinutes()).padStart(2, "0");
   const date = `${hours}:${minutes}`;
-  const message = input.value + `(${date})`;
-  socket.emit("message", message);
+  if (input.value.trim().length > 0) {
+    const message = input.value + `(${date})`;
+    socket.emit("message", message);
+  }
   input.value = "";
 });
