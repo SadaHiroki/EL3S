@@ -10,14 +10,8 @@ body {
   padding: 0 10px;
 }
 
-.chatRoom {
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
 .messages {
-  height: 300px;
+  height: calc(100vh - 100px);
   overflow-y: scroll;
   padding: 20px;
 }
@@ -26,20 +20,13 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
-  font-size: 14px;
-}
-
-.message.self {
-  background-color: #00B7FF;
-  color: #fff;
-}
-
-.message.other {
-  background-color: #f5f5f5;
-  color: #333;
+  font-size: 30px;
 }
 
 .form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -49,7 +36,7 @@ body {
   padding: 5px;
   border: 1px solid #ddd;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 30px;
 }
 
 .submit {
@@ -57,8 +44,22 @@ body {
   border: none;
   border-radius: 3px;
   color: #fff;
-  font-size: 14px;
+  font-size: 30px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .chatArea {
+    padding: 0 5px;
+  }
+
+  .messages {
+    height: calc(100vh - 70px);
+  }
+
+  .form {
+    bottom: 5px;
+  }
 }
 
