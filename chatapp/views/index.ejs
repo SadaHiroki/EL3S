@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>リアルタイムチャット</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div id="chatArea" class="chatArea">
+        <ul id="messages" class="messages">
+
+        </ul>
+    </div>
+    <div id="inputArea" class="inputArea">
+        <form id="form" class="form">
+            <input type="text" id="textarea" name="message" placeholder="メッセージを入力してください" class="input">
+            <input type="submit" value="送信" id="submit" name="submit" class="submit">
+        </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/chat.js"></script>
   </body>
 </html>
